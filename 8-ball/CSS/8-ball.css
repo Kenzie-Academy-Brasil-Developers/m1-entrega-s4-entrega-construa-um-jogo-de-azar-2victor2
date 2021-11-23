@@ -1,0 +1,97 @@
+body {
+    background-image: url(/8-ball/Assets/background2.jpg);
+    background-size: 100vw 100vh;
+}
+.magicBallHeader {
+    display: flex;
+    justify-content: center;
+    padding-top: 3px;
+}
+.magicBallHeader a:hover {
+    color: #000;
+}
+.magicBallNav {
+    margin-bottom: 25px;
+}
+.magicBallNav a {
+    text-decoration: none;
+    color: #fff;
+    margin-left: 8px;
+    text-transform: uppercase;
+}
+.magicBallSection {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    color: #fff;
+}
+.magicBallSection h1 {
+    font-size: 30px;
+}
+.magicBallSection span {
+    margin-bottom: 8px;
+    font-size: 20px;
+}
+.magicBallSection h2 {
+    margin-bottom: 20px;
+    font-size: 30px;
+}
+.magicBallSection p {
+    text-align: center;
+    margin-bottom: 20px;
+    width: 270px;
+    font-size: 20px;
+}
+.magicBallSection figure {
+    height: 220px;
+    width: 220px;
+    margin: 15px 0;
+}
+.magicBallSection img {
+    height: 220px;
+    width: 220px;
+}
+.inputText {
+    width: 256px;
+    height: 25px;
+    border: none;
+    border-radius: 8px;
+}
+.magicBallAside {
+    display: none;
+}
+
+@media (min-width:480px){
+    body {
+        background-image:url(/8-ball/Assets/background2.jpg);
+        background-size: 100vw 100vh;
+    }
+    .magicBallHeader {
+        display: flex;
+        justify-content: end;
+        padding: 10px 15px;
+    }
+    .magicBallHeader a {
+        margin-left: 20px;
+    }
+    .magicBallMain {
+        display: flex;
+    }
+    .mobileRules {
+        display: none;
+    }
+    .magicBallAside {
+        display: flex;
+        padding: 0 20px 0 20px;
+        border-left: 2px dashed #fff;
+        color: #fff;
+    }
+    .magicBallAside span {
+        font-size: 25px;
+    }
+    .magicBallAside li {
+        margin-top: 15px;
+    }
+}
