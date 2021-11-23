@@ -1,0 +1,75 @@
+/*MESMA FONTE EM TODO BODY*/
+body{
+	background-image: url(/home-page/background-amadeirado.jpg);
+	font-family: 'Amatic SC', cursive;
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 10px;
+}
+figcaption{
+	display: none;
+}
+#hunting--words, #magic--ball {
+	text-decoration: none;
+	color:#fff;
+	font-size: 26px;
+	margin: 15px 0;
+}
+#hunting--words:hover, #magic--ball:hover{
+	text-decoration: underline;
+}
+/*MENU DE NAVEGAÇÃO*/
+header{
+	width: 100%;
+}
+.navbar {
+	display: flex;
+	justify-content: space-evenly;
+	width: 100%;
+	align-items: center;
+}
+
+/*NOME DO GRUPO*/
+h1{
+	color: #fff;
+	font-size: 36px;
+	text-align: center;
+	margin: 15px 0;
+}
+
+/*PRESENTS*/
+.presents{
+	color: #fff;
+	text-align: center;
+	font-size: 26px;
+	font-style: italic;
+}
+/*NOME DO JOGO*/
+.title{
+	color: #fff;
+	font-size: 36px;
+	text-align: center;
+	margin: 15px 0;
+}
+
+/* REGRAS */
+h2{
+	color: #fff;
+	font-size: 26px;
+}
+
+/* CONTAINER / TABLE*/
+#container-table{
+}
+
+
+/*CÉLULA DA TABELA - TAMANHO E BORDA*/
+td {
+	width: 50px;
+	height: 50px;
+	border: 1px #fff solid;
+}
+
+/* COMPATIBILIDADE COM TELAS ACIMA DE 800PX DE LARGURA */
