@@ -74,7 +74,7 @@ map[inicialX][temp2]=temp[index]
 }
 }
 //preencher com letras aleatorias o restante do array bidimensional
-const mapFinal = map
+let mapFinal = map
 console.table(mapFinal)
 for(let i = 0;i<mapFinal.length;i++){
     for(let j =0;j<mapFinal[i].length;j++){
@@ -82,18 +82,20 @@ if(mapFinal[i][j]==="")
 mapFinal[i][j] = randomLetter()
 }
 }
-console.table(mapFinal);
+return mapFinal
 }
+
+let map1=start()
 
 //Função para criar o array no HTML
 const hunter = document.getElementById("container-table");
 const handleBuildLine = (currentLine, line) => {
     for (let column = 0; column < currentLine.length; column++){
         const cell = document.createElement("div");
-        cell.setAttribute("column", column);
-        cell.setAttribute("line", line);
+        // cell.setAttribute("column", column);
+        // cell.setAttribute("line", line);
         cell.classList.add('letters');
-        cell.textContent = randomLetter();
+        cell.textContent = map1[line][column];
         hunter.appendChild(cell);
     }
 };
@@ -113,9 +115,24 @@ const reset = document.getElementById('reset');
 reset.addEventListener('click', restartGame);
 
 function restartGame() {
-
+    hunter.innerHTML = ""
     
-    handleBuildMap();
+    map = [
+        ["","","","","","","","","","",],
+        ["","","","","","","","","","",],
+        ["","","","","","","","","","",],
+        ["","","","","","","","","","",],
+        ["","","","","","","","","","",],
+        ["","","","","","","","","","",],
+        ["","","","","","","","","","",],
+        ["","","","","","","","","","",],
+        ["","","","","","","","","","",],
+        ["","","","","","","","","","",]
+        ]
+    
+        map1 = start()
+
+        handleBuildMap()
 
 }
 
