@@ -159,8 +159,6 @@ function clique2(e){
     }
         else{selection[linha][coluna] = ""}
         
-    console.table(selection)
-    console.table(map2)
 }
 
 
