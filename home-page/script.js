@@ -159,6 +159,7 @@ function clique2(e){
     }
         else{selection[linha][coluna] = ""}
         
+
 }
 
 
