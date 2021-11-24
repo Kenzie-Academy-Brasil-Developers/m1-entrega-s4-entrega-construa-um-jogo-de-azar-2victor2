@@ -83,9 +83,7 @@ mapFinal[i][j] = randomLetter()
 }
 }
 console.table(mapFinal);
-return mapFinal;
 }
-
 
 //Função para criar o array no HTML
 const hunter = document.getElementById("container-table");
@@ -115,19 +113,8 @@ const reset = document.getElementById('reset');
 reset.addEventListener('click', restartGame);
 
 function restartGame() {
-  map = [
-    ["", "", "", "", "", "", "", "", "", ""],
-    ["", "", "", "", "", "", "", "", "", ""],
-    ["", "", "", "", "", "", "", "", "", ""],
-    ["", "", "", "", "", "", "", "", "", ""],
-    ["", "", "", "", "", "", "", "", "", ""],
-    ["", "", "", "", "", "", "", "", "", ""],
-    ["", "", "", "", "", "", "", "", "", ""],
-    ["", "", "", "", "", "", "", "", "", ""],
-    ["", "", "", "", "", "", "", "", "", ""],
-    ["", "", "", "", "", "", "", "", "", ""],
-    ];
-  
+
+    
     handleBuildMap();
 
 }
