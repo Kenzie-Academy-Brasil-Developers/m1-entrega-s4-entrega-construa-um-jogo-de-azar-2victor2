@@ -7,17 +7,20 @@ const wordSearch = ["sinuca","taco","gelada","giz", "caçapa","cerveja","petisco
 "pagodinho"]
 //Array bidimensional onde serao adicionadas as palavras e letras aleatorias
 let map = [
-["","","","","","","","","","",],
-["","","","","","","","","","",],
-["","","","","","","","","","",],
-["","","","","","","","","","",],
-["","","","","","","","","","",],
-["","","","","","","","","","",],
-["","","","","","","","","","",],
-["","","","","","","","","","",],
-["","","","","","","","","","",],
-["","","","","","","","","","",]
-]
+["", "", "", "", "", "", "", "", "", ""],
+["", "", "", "", "", "", "", "", "", ""],
+["", "", "", "", "", "", "", "", "", ""],
+["", "", "", "", "", "", "", "", "", ""],
+["", "", "", "", "", "", "", "", "", ""],
+["", "", "", "", "", "", "", "", "", ""],
+["", "", "", "", "", "", "", "", "", ""],
+["", "", "", "", "", "", "", "", "", ""],
+["", "", "", "", "", "", "", "", "", ""],
+["", "", "", "", "", "", "", "", "", ""],
+];
+
+
+
 //Função para criar um numero aleatorio entre dois valores
 function randomNumber(min,max){
         min = Math.ceil(min);
@@ -58,47 +61,49 @@ return words
 }
 // Funçao para começar as modificaçoes no Map com as palavras selecionadas
 function start(){
-const words = chooseWords()
-let temp
-let temp2
-for (let count=0; count < 3; count ++){
-let inicialX=randomNumber(0,10)
-let inicialY=randomNumber(0,10)
-temp = words[count]
-while (avaliableSpot(inicialX,inicialY,temp)===false){
-    inicialX=randomNumber(0,10)
-    inicialY=randomNumber(0,10)}
-for (let index = 0; index<temp.length;index++){
-temp2 = inicialY + index
-map[inicialX][temp2]=temp[index]
+    const words = chooseWords()
+    let temp
+    let temp2
+    for (let count=0; count < 3; count ++){
+        let inicialX=randomNumber(0,10)
+        let inicialY=randomNumber(0,10)
+        temp = words[count]
+        while (avaliableSpot(inicialX,inicialY,temp)===false){
+            inicialX=randomNumber(0,10)
+            inicialY=randomNumber(0,10)}
+    for (let index = 0; index<temp.length;index++){
+        temp2 = inicialY + index
+        map[inicialX][temp2]=temp[index]
+        }
+    }
+    //preencher com letras aleatorias o restante do array bidimensional
+    const mapFinal = map;
+    console.table(mapFinal)
+    for(let i = 0;i<mapFinal.length;i++){
+        for(let j =0;j<mapFinal[i].length;j++){
+    if(mapFinal[i][j]==="")
+        mapFinal[i][j] = randomLetter()
+        }
+    }
+    return console.table(mapFinal)
 }
-}
-//preencher com letras aleatorias o restante do array bidimensional
-const mapFinal = map
-console.table(mapFinal)
-for(let i = 0;i<mapFinal.length;i++){
-    for(let j =0;j<mapFinal[i].length;j++){
-if(mapFinal[i][j]==="")
-mapFinal[i][j] = randomLetter()
-}
-}
-console.table(mapFinal);
-return mapFinal;
-}
-
 
 //Função para criar o array no HTML
 const hunter = document.getElementById("container-table");
+
 const handleBuildLine = (currentLine, line) => {
     for (let column = 0; column < currentLine.length; column++){
         const cell = document.createElement("div");
         cell.setAttribute("column", column);
         cell.setAttribute("line", line);
         cell.classList.add('letters');
-        cell.textContent = randomLetter();
+        //let mapFinalA = start();
+        //currentLine[column] = mapFinalA[line][column];
+        cell.textContent = currentLine[column];
         hunter.appendChild(cell);
     }
 };
+
 
 const handleBuildMap = () => {
     for(let line = 0; line < map.length; line++) {
@@ -109,8 +114,7 @@ const handleBuildMap = () => {
 
 handleBuildMap();
 
-//FUNÇÃO RESET
-const reset = document.getElementById('reset');
+const reset = document.querySelector('input');
 
 reset.addEventListener('click', restartGame);
 
@@ -131,8 +135,6 @@ function restartGame() {
     handleBuildMap();
 
 }
-
-
 
 
 // MAGIC 8-BALL
