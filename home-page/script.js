@@ -107,7 +107,7 @@ let disponibilidade = false
     word = words[count]
     orientaçao = randomNumber(0,3)
     disponibilidade = false
-    while (qualquerCoisa===false){
+    while (disponibilidade===false){
         switch (orientaçao) {
                 case 0: 
                 disponibilidade=avaliableSpot(inicialX,inicialY,word)
