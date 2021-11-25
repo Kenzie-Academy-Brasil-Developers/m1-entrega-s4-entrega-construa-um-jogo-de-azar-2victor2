@@ -3,7 +3,7 @@
 // Array para armazenar as respostas da Magic Ball
 
 const answersMagicBall = ["Pela angulação do taco, essa é caçapa!","Sem dúvida essa cai!",
-"Hmm... Essa é caçapa!","Tenho minhas dúvidas","Essa a física não permite!","Sim!","Definitivamente!",
+"Hmm... Essa é caçapa!","Tenho minhas dúvidas","Essa a física não permite!","Sim!","Essa tacada foi padrão #éusguri de qualidade, 300% de certeza que cai!",
 "Pode confiar, é caçapa!","Ih rapaz... Melhor deixar essa para lá...",
 "Para não te comprometer, vou deixar essa em off...","Melhor nem tentar... Essa não cai!",
 "Não vai cair nunca, passa um giz e tenta de novo!","Essa não precisa nem de giz, é certeza!", 
