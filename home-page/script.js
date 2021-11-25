@@ -268,3 +268,7 @@ function restartGame() {
         handleBuildMap()
 
 }
+// VOLUME DO AUDIO DE FUNDO
+
+const audio = document.getElementById("myAudio");
+  audio.volume = 0.1;

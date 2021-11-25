@@ -65,11 +65,11 @@ h2{
 div p {
 	margin-top: 20px;
 }
-div p span{
+
+div p span {
 	color: #fff;
 	font-size: 24px;
 	cursor: pointer;
-	/* font-family: 'Amatic SC', cursive; */
 }
 div h2{
 	margin-top: 20px;
@@ -170,5 +170,6 @@ div p .line-through{
 		font-size: 26px;
 		text-align: center;
 		line-height: 50px;	
+		text-decoration: li;
 	}
 }
