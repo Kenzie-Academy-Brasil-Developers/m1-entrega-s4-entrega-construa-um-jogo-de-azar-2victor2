@@ -5,6 +5,26 @@
 const wordSearch = ["sinuca","taco","gelada","giz", "caçapa","cerveja","petisco","garçom",
 "coxinha","bolao","tacada","pares","impares","tabela","mesa","triangulo","estoura","zeca",
 "pagodinho","guri"]
+
+//função para mostrar as palavras na tela para o jogador
+
+const containerP = document.getElementById("wordsToFind")
+for(let P = 0; P < wordSearch.length; P++){
+    let span = document.createElement("span")
+    let hyphen = document.createElement("span")
+
+    span.setAttribute("id","clickedWord")
+    span.innerText = wordSearch[P]
+    hyphen.innerText = " - "
+
+    containerP.appendChild(span)
+    containerP.appendChild(hyphen)
+
+    span.addEventListener("click", ()=>{
+        span.classList.toggle("line-through")
+    })
+}
+
 //Array bidimensional onde serao adicionadas as palavras e letras aleatorias
 let map = [
     ["","","","","","","","","","",],

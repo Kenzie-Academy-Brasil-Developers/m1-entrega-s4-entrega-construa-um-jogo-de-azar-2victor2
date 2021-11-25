@@ -1,36 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Caça-palavras</title>
-    <!-- RESET -->
-    <link rel="stylesheet" href="/home-page/reset.css" />
-    <!-- ICON -->
-    <link rel="shortcut icon" type="imagex/png" href="hunting--words.png" />
-    <!-- FONTES -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Roboto+Condensed:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
-    <!-- FOLHA DE ESTILO -->
-    <link rel="stylesheet" href="/home-page/hunting--words.css" />
-  </head>
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Caça-palavras</title>
+		<!-- RESET -->
+		<link rel="stylesheet" href="/home-page/reset.css"/>	
+		<!-- ICON -->
+		<link rel="shortcut icon" type="imagex/png" href="hunting--words.png">
+		<!-- FONTES -->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Roboto+Condensed:wght@400;700&display=swap" rel="stylesheet">
+		<!-- FOLHA DE ESTILO -->
+		<link rel="stylesheet" href="/home-page/hunting--words.css"/>
+	</head>
 
-  <!-- BODY -->
-  <body>
-    <!-- HEADER -->
-    <header>
-      <div class="navbar">
-        <a id="hunting--words" href="./index.html">Caça-palavras</a>
-        <a id="magic--ball" href="./8-ball/8-ball.html">Magic 8-ball</a>
-      </div>
-    </header>
+	<!-- BODY -->
+	<body>
+		<!-- HEADER -->
+		<header>
+			<div class="navbar">
+				<a id="hunting--words" href="http://127.0.0.1:5500/index.html">Caça-palavras</a>
+				<a id="magic--ball"href="http://127.0.0.1:5500/8-ball/8-ball.html">Magic 8-ball</a>
+			</div>
+		</header>
 
     <!-- SEÇÃO PRINCIPAL DA PÁGINAL -->
+
     <main id="main">
       <!-- SEÇÃO DO JOGO -->
       <section id="hunting--words--board">
@@ -38,11 +36,11 @@
         <p class="presents">apresenta:</p>
         <p class="title">Zecaterapia em Palavras</p>
         <!-- REGRAS -->
-        <div>
+        <div id="containerRules">
           <ul class="rulesLIst">
-			  <li>
-				<span>Sobre o jogo:</span>
-			  </li>
+            <li>
+            <span>Sobre o jogo:</span>
+            </li>
             <li>
               <p>
                 Caça-palavras é um jogo em que seu objetivo é encontrar um
@@ -70,21 +68,14 @@
             </li>
           </ul>
           <h2>Palavras a serem encontradas:</h2>
-          <p>
-            <span>sinuca -</span> <span>taco -</span
-            ><span>gelada -</span> <span>giz -</span
-            ><span>caçapa -</span><span>cerveja -</span>
-            <span>petisco -</span><span>garçom -</span
-            ><span>coxinha -</span> <span>bolao -</span
-            ><span>tacada -</span> <span>pares -</span
-            ><span>impares -</span><span>tabela -</span
-            ><span>mesa -</span> <span>triangulo -</span
-            ><span>estoura -</span><span>zeca -</span><span>pagodinho -</span>
-            <span>guri</span>
+
+          <p id="wordsToFind">
+            
+
           </p>
         </div>
       </section>
-      />
+      
       <!-- TABELA PARA O CAÇA-PALAVRAS -->
       <section class="table">
         <div id="container-table"></div>
@@ -96,4 +87,7 @@
     </main>
     <script src="/home-page/script.js"></script>
   </body>
+
+  
 </html>
+		

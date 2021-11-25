@@ -65,13 +65,17 @@ h2{
 div p {
 	margin-top: 20px;
 }
+
 div p span {
 	color: #fff;
 	font-size: 24px;
 	cursor: pointer;
-	border: none;
-	background-color: transparent;
-	font-family: 'Amatic SC', cursive;
+}
+div h2{
+	margin-top: 20px;
+}
+div p .line-through{
+	text-decoration: line-through;
 }
 #hunting--words--board ul li p {
 	color: #fff;
@@ -115,6 +119,7 @@ div p span {
 	font-size: 26px;
 	text-align: center;
 	line-height: 30px;	
+	cursor: pointer;
 }
 .letters-clicked {
 	background-color: darkgreen;
@@ -126,7 +131,7 @@ div p span {
     padding-bottom: 8px;
     background-color: transparent;
     color: white;
-    font-size: 22px;
+    font-size: 26px;
     display: flex;
     border: 0px;
     margin: 20px auto 0;
