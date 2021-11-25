@@ -64,12 +64,16 @@ body {
 }
 .magicBallAside {
     display: flex;
-    flex-wrap: wrap;
-    display: none;
-    width: 600px;
+    padding: 0 5px;
+    color: #fff;
+    width: 300px;
+    margin: 20px auto;
 }
 .magicBallAside p {
     font-size: 22px;
+}
+.magicBallAside li{
+    margin: 10px 0;
 }
 .magicBallAside li span {
     font-size: 30px;
@@ -103,9 +107,6 @@ body {
     }
     .magicBallMain {
         display: flex;
-    }
-    .mobileRules {
-        display: none;
     }
     .magicBallAside {
         display: flex;
