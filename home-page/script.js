@@ -5,6 +5,26 @@
 const wordSearch = ["sinuca","taco","gelada","giz", "caçapa","cerveja","petisco","garçom",
 "coxinha","bolao","tacada","pares","impares","tabela","mesa","triangulo","estoura","zeca",
 "pagodinho","guri"]
+
+//função para mostrar as palavras na tela para o jogador
+
+const containerP = document.getElementById("wordsToFind")
+for(let P = 0; P < wordSearch.length; P++){
+    let span = document.createElement("span")
+    let hyphen = document.createElement("span")
+
+    span.setAttribute("id","clickedWord")
+    span.innerText = wordSearch[P]
+    hyphen.innerText = " - "
+
+    containerP.appendChild(span)
+    containerP.appendChild(hyphen)
+
+    span.addEventListener("click", ()=>{
+        span.classList.toggle("line-through")
+    })
+}
+
 //Array bidimensional onde serao adicionadas as palavras e letras aleatorias
 let map = [
     ["","","","","","","","","","",],
@@ -16,7 +36,7 @@ let map = [
     ["","","","","","","","","","",],
     ["","","","","","","","","","",],
     ["","","","","","","","","","",],
-    ["","","","","","","","","","",]
+    ["","","","","","","","","","",],
     ]
 
 let map2 = [
@@ -29,7 +49,7 @@ let map2 = [
     ["","","","","","","","","","",],
     ["","","","","","","","","","",],
     ["","","","","","","","","","",],
-    ["","","","","","","","","","",]
+    ["","","","","","","","","","",],
     ]
 //Função para criar um numero aleatorio entre dois valores
 function randomNumber(min,max){
@@ -47,11 +67,33 @@ return letter
 //funçao para checar se todos valores procurados sao conjuntos vazios (horizontalmente)
 function avaliableSpot(x,y,word){
 for (let indexY = 0; indexY < word.length;indexY++){
-    let temp = map[x][indexY+y]
-if (temp!==""){ return false}
+    if(map[x]===undefined){return false}
+    let textoMapa = map[x][indexY+y]
+if (textoMapa!==""){ return false}
 }
 return true
 }
+//funçao para checar se todos valores procurados sao conjuntos vazios (verticalmente)
+function avaliableSpotVertical(x,y,word){
+    for (let indexX = 0; indexX < word.length;indexX++){
+        if (map[indexX+x]===undefined){return false}
+        let textoMapa = map[indexX+x][y]
+    if (textoMapa!==""){ return false}
+    }
+    return true
+    }
+//funçao para checar se todos valores procurados sao conjuntos vazios (diagonalmente)
+function avaliableSpotDiagonal(x,y,word){
+    for (let indexX = 0; indexX < word.length;indexX++){
+    if (map[indexX+x]===undefined){return false}
+        let textoMapa = map[indexX+x][indexX+y]
+    if (textoMapa!==""){ return false}
+    }
+    return true
+    }
+
+//funçao para determinar randominicamente a posiçao da palavra
+
 
 //funçao para escolher as palavras pro map
 
@@ -71,20 +113,68 @@ return words
 }
 // Funçao para começar as modificaçoes no Map com as palavras selecionadas
 function start(){
-const words = chooseWords()
-let temp
-let temp2
-for (let count=0; count < 3; count ++){
-let inicialX=randomNumber(0,10)
-let inicialY=randomNumber(0,10)
-temp = words[count]
-while (avaliableSpot(inicialX,inicialY,temp)===false){
-    inicialX=randomNumber(0,10)
-    inicialY=randomNumber(0,10)}
-for (let index = 0; index<temp.length;index++){
-temp2 = inicialY + index
-map[inicialX][temp2]=temp[index]
-map2[inicialX][temp2]=temp[index]
+//Declaraçao das variaveis pra funçao
+let words = chooseWords()
+let word
+let posiçaoMapa
+let orientaçao
+let posiçaoMapaExtra
+let disponibilidade = false
+// Gerador de posiçao inicial aleatoria e checador de disponibilidade
+    for (let count=0; count < 3; count ++){
+    let inicialX=randomNumber(0,10)
+    let inicialY=randomNumber(0,10)
+    word = words[count]
+    orientaçao = randomNumber(0,3)
+    disponibilidade = false
+    while (qualquerCoisa===false){
+        switch (orientaçao) {
+                case 0: 
+                disponibilidade=avaliableSpot(inicialX,inicialY,word)
+                    if(disponibilidade===false){
+                    inicialX=randomNumber(0,10)
+                    inicialY=randomNumber(0,10)
+                    orientaçao = randomNumber(0,3)}
+                    
+                    break
+                case 1:
+                    disponibilidade = avaliableSpotVertical(inicialX,inicialY,word)
+                    if (disponibilidade === false ){
+                    inicialX=randomNumber(0,10)
+                    inicialY=randomNumber(0,10)
+                    orientaçao = randomNumber(0,3)}
+                    
+                    break
+                case 2:
+                    disponibilidade = avaliableSpotDiagonal(inicialX,inicialY,word)
+                    if (disponibilidade === false ){
+                    inicialX=randomNumber(0,10)
+                    inicialY=randomNumber(0,10)
+                    orientaçao = randomNumber(0,3)}
+                   
+                    break}
+    }
+//Preenchedor da tabela com as palavras escolhidas
+if (orientaçao===0){
+for (let index = 0; index<word.length;index++){
+    posiçaoMapa = inicialY + index
+map[inicialX][posiçaoMapa]=word[index]
+map2[inicialX][posiçaoMapa]=word[index]
+}
+}
+if (orientaçao===1){
+    for (let index = 0; index<word.length;index++){
+        posiçaoMapa = inicialX + index
+    map[posiçaoMapa][inicialY]=word[index]
+    map2[posiçaoMapa][inicialY]=word[index]
+    }}
+if (orientaçao===2){
+for (let index = 0; index<word.length;index++){
+    posiçaoMapa = inicialX + index
+    posiçaoMapaExtra = inicialY + index
+map[posiçaoMapa][posiçaoMapaExtra]=word[index]
+map2[posiçaoMapa][posiçaoMapaExtra]=word[index]
+}
 }
 }
 return map
