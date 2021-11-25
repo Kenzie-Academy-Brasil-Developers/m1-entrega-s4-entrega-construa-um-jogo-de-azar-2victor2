@@ -14,7 +14,7 @@ figcaption{
 #hunting--words, #magic--ball {
 	text-decoration: none;
 	color:#fff;
-	font-size: 26px;
+	font-size: 28px;
 	margin: 15px 0;
 }
 #hunting--words:hover, #magic--ball:hover{
@@ -34,7 +34,7 @@ header{
 /*NOME DO GRUPO*/
 h1{
 	color: #fff;
-	font-size: 36px;
+	font-size: 38px;
 	text-align: center;
 	margin: 15px 0;
 }
@@ -43,13 +43,13 @@ h1{
 .presents{
 	color: #fff;
 	text-align: center;
-	font-size: 26px;
+	font-size: 28px;
 	font-style: italic;
 }
 /*NOME DO JOGO*/
 .title{
 	color: #fff;
-	font-size: 36px;
+	font-size: 38px;
 	text-align: center;
 	margin: 15px 0 30px 0;
 }
@@ -57,14 +57,25 @@ h1{
 /* REGRAS */
 h2{
 	color: #fff;
-	font-size: 26px;
+	font-size: 28px;
 }
 .rulesList {
 	padding: 5px;
 }
+div p {
+	margin-top: 20px;
+}
+div p button{
+	color: #fff;
+	font-size: 24px;
+	cursor: pointer;
+	border: none;
+	background-color: transparent;
+	font-family: 'Amatic SC', cursive;
+}
 #hunting--words--board ul li p {
 	color: #fff;
-	font-size: 20px;
+	font-size: 26px;
 	margin-bottom: 10px;
 }
 #hunting--words--board ul li span {
@@ -77,31 +88,33 @@ h2{
 }
 
 
+
 /* CONTAINER / TABLE*/
 .table {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	width: 100vw;
+
 }
 #container-table{
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
-	width: 520px;
+	width: 100vw;
 	margin-top: 30px;
 }
 
 
 /*LETRA DO CAÇA PALAVRAS - TAMANHO E BORDA*/
 .letters {
-	width: 50px;
-	height: 50px;
+	width: 30px;
+	height: 30px;
 	border: 1px #fff solid;
 	color: white;
-	font-size: 20pt;
+	font-size: 26px;
 	text-align: center;
-	line-height: 50px;	
+	line-height: 30px;	
 }
 .letters-clicked {
 	background-color: darkgreen;
@@ -131,5 +144,26 @@ h2{
 	}
 	#hunting--words--board div {
 		text-align: center;
+	}
+	
+
+	#container-table{
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		width: 520px;
+		margin-top: 30px;
+	}
+	
+	
+	/*LETRA DO CAÇA PALAVRAS - TAMANHO E BORDA*/
+	.letters {
+		width: 50px;
+		height: 50px;
+		border: 1px #fff solid;
+		color: white;
+		font-size: 26px;
+		text-align: center;
+		line-height: 50px;	
 	}
 }
