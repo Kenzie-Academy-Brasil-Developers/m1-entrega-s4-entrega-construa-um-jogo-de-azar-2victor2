@@ -41,3 +41,5 @@ function showAnswer() {
     let section = document.getElementById("magicBallSec")
     section.appendChild(divContainer)
 } 
+const audio = document.getElementById("myAudio");
+  audio.volume = 0.1;

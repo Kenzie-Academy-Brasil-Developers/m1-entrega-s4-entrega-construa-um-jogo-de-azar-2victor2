@@ -65,7 +65,7 @@ h2{
 div p {
 	margin-top: 20px;
 }
-div p button{
+div p span {
 	color: #fff;
 	font-size: 24px;
 	cursor: pointer;
@@ -165,5 +165,6 @@ div p button{
 		font-size: 26px;
 		text-align: center;
 		line-height: 50px;	
+		text-decoration: li;
 	}
 }
