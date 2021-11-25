@@ -71,6 +71,9 @@ div p span {
 	font-size: 24px;
 	cursor: pointer;
 }
+div p span:last-child{
+	display: none;
+}
 div h2{
 	margin-top: 20px;
 }

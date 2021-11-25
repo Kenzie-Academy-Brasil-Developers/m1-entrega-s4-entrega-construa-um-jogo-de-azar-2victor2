@@ -262,8 +262,6 @@ function clique2(e){
 
 //parametro de vitoria
 const victory = (a, b) => {
-    console.log(a) 
-    console.log(b)
     if (a.length == b.length){
         for(let line = 0; line < a.length; line++){
             for (let column = 0; column < a.length; column++){
@@ -274,18 +272,6 @@ const victory = (a, b) => {
         } return true;
     }
 }
-let theVictory = victory(selection, map2);
-if (theVictory == true) {
-    hunter.removeEventListener("click",clique2)
-    alert("PEI")
-    // if (confirm("Parabéns, você achou todas as palavras! Deseja jogar novamente?")) {
-    //     alert("Vamos lá");
-    //     restartGame();
-    //     } else {
-    //     alert("Que pena!");
-    //     }
-}
-
 
 //FUNÇÃO RESET
 const reset = document.getElementById('reset');
