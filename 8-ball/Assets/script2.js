@@ -4,7 +4,7 @@
 
 const answersMagicBall = ["Pela angulação do taco, essa é caçapa!","Sem dúvida essa cai!",
 "Hmm... Essa é caçapa!","Tenho minhas dúvidas","Essa a física não permite!","Sim!","Definitivamente!",
-"Pode confiar, é caçapa!","Ih rapaz... Melhor deixar essa para lá...",
+"Pode confiar, é caçapa!","Ih rapaz... Melhor deixa essa para lá...",
 "Para não te comprometer, vou deixar essa em off...","Melhor nem tentar... Essa não cai!",
 "Não vai cair nunca, passa um giz e tenta de novo!","Essa não precisa nem de giz, é certeza!", 
 "A meu ver, essa entra!","Essa entra, certeza!","Quase cai! Passa um giz e tenta de novo!",
@@ -18,12 +18,26 @@ const getRandomAnswer = () => {
     return answersMagicBall[answer]
 }
 
-// Função para exibir a resposta da bola na tela, quando a pergunta for feita 
+// funçao para criar o popup
 
-/* TO DO  *\
-*   criar os elementos que serão o popup que irão armazenar a resposta da Magic Ball
-*   adicionar um eventListener dentro do input para quando a tecla enter for executada
-*   fazer com que quando o eventListener o popup seja criado
-*
-*
-*/
+let magicSection = document.getElementsByClassName("magicBallSection")
+
+// função para mostrar a resposta na tela
+
+const input = document.getElementById("magicBallInput")
+input.addEventListener("change", showAnswer)
+
+const divContainer = document.createElement("div")
+divContainer.classList.add('popupDiv');
+
+function showAnswer() {
+    let audio = document.querySelector("audio")
+    audio.play()
+    divContainer.innerHTML = ""
+    let pickedAnswer = document.createElement("span")
+    pickedAnswer.classList.add('popupSpan');
+    pickedAnswer.innerText = getRandomAnswer()
+    divContainer.appendChild(pickedAnswer)
+    let section = document.getElementById("magicBallSec")
+    section.appendChild(divContainer)
+} 

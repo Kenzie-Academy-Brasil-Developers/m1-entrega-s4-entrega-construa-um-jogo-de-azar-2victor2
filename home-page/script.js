@@ -4,20 +4,33 @@
 //Lista de palavras possiveis de aparecer no caça palavras, todas relacionadas a sinuca ou bar
 const wordSearch = ["sinuca","taco","gelada","giz", "caçapa","cerveja","petisco","garçom",
 "coxinha","bolao","tacada","pares","impares","tabela","mesa","triangulo","estoura","zeca",
-"pagodinho"]
+"pagodinho","guri"]
 //Array bidimensional onde serao adicionadas as palavras e letras aleatorias
 let map = [
-["","","","","","","","","","",],
-["","","","","","","","","","",],
-["","","","","","","","","","",],
-["","","","","","","","","","",],
-["","","","","","","","","","",],
-["","","","","","","","","","",],
-["","","","","","","","","","",],
-["","","","","","","","","","",],
-["","","","","","","","","","",],
-["","","","","","","","","","",]
-]
+    ["","","","","","","","","","",],
+    ["","","","","","","","","","",],
+    ["","","","","","","","","","",],
+    ["","","","","","","","","","",],
+    ["","","","","","","","","","",],
+    ["","","","","","","","","","",],
+    ["","","","","","","","","","",],
+    ["","","","","","","","","","",],
+    ["","","","","","","","","","",],
+    ["","","","","","","","","","",]
+    ]
+
+let map2 = [
+    ["","","","","","","","","","",],
+    ["","","","","","","","","","",],
+    ["","","","","","","","","","",],
+    ["","","","","","","","","","",],
+    ["","","","","","","","","","",],
+    ["","","","","","","","","","",],
+    ["","","","","","","","","","",],
+    ["","","","","","","","","","",],
+    ["","","","","","","","","","",],
+    ["","","","","","","","","","",]
+    ]
 //Função para criar um numero aleatorio entre dois valores
 function randomNumber(min,max){
         min = Math.ceil(min);
@@ -43,11 +56,11 @@ return true
 //funçao para escolher as palavras pro map
 
 function chooseWords(num){
-let a = randomNumber(0,10)
-let b = randomNumber(0,10)
-while (b === a){b=randomNumber(0,10)}
-let c = randomNumber(0,10)
-while (c===a||c===b){c=randomNumber(0,10)}
+let a = randomNumber(0,wordSearch.length)
+let b = randomNumber(0,wordSearch.length)
+while (b === a){b=randomNumber(0,wordSearch.length)}
+let c = randomNumber(0,wordSearch.length)
+while (c===a||c===b){c=randomNumber(0,wordSearch.length)}
 
 a = wordSearch[a]
 b = wordSearch[b]
@@ -71,21 +84,30 @@ while (avaliableSpot(inicialX,inicialY,temp)===false){
 for (let index = 0; index<temp.length;index++){
 temp2 = inicialY + index
 map[inicialX][temp2]=temp[index]
+map2[inicialX][temp2]=temp[index]
 }
 }
+return map
+}
+
+start()
+
 //preencher com letras aleatorias o restante do array bidimensional
-const mapFinal = map
-console.table(mapFinal)
+function start2(){
+let mapFinal = map
 for(let i = 0;i<mapFinal.length;i++){
     for(let j =0;j<mapFinal[i].length;j++){
 if(mapFinal[i][j]==="")
 mapFinal[i][j] = randomLetter()
 }
 }
-console.table(mapFinal);
+return mapFinal
 }
 
+let map1=start2()
+
 //Função para criar o array no HTML
+
 const hunter = document.getElementById("container-table");
 const handleBuildLine = (currentLine, line) => {
     for (let column = 0; column < currentLine.length; column++){
@@ -93,7 +115,7 @@ const handleBuildLine = (currentLine, line) => {
         cell.setAttribute("column", column);
         cell.setAttribute("line", line);
         cell.classList.add('letters');
-        cell.textContent = randomLetter();
+        cell.textContent = map1[line][column];
         hunter.appendChild(cell);
     }
 };
@@ -107,18 +129,122 @@ const handleBuildMap = () => {
 
 handleBuildMap();
 
+// funcionalidade do jogo
+
+
+let selection = [
+    ["","","","","","","","","","",],
+    ["","","","","","","","","","",],
+    ["","","","","","","","","","",],
+    ["","","","","","","","","","",],
+    ["","","","","","","","","","",],
+    ["","","","","","","","","","",],
+    ["","","","","","","","","","",],
+    ["","","","","","","","","","",],
+    ["","","","","","","","","","",],
+    ["","","","","","","","","","",]
+    ]
+
+hunter.addEventListener("click",clique2);
+function clique2(e){
+    let div = e.target
+    let letra = div.textContent
+    let linha = div.getAttribute("line")
+    let coluna = div.getAttribute("column")
+    div.classList.toggle("letters-clicked")
+    if (selection[linha][coluna]===""){
+    selection[linha][coluna] = letra
+    }
+        else{selection[linha][coluna] = ""}
+
+        let theVictory = victory(selection, map2);
+        if (theVictory == true) {
+            hunter.removeEventListener("click",clique2)
+            if (confirm("Parabéns, você achou todas as palavras! Deseja jogar novamente?")) {
+                alert("Vamos lá");
+                restartGame();
+                } else {
+                alert("Que pena!");
+                }
+        }
+        
+
+}
+
+//parametro de vitoria
+const victory = (a, b) => {
+    console.log(a) 
+    console.log(b)
+    if (a.length == b.length){
+        for(let line = 0; line < a.length; line++){
+            for (let column = 0; column < a.length; column++){
+                if (a[line][column]!==b[line][column]){
+                    return false; 
+                } 
+            }
+        } return true;
+    }
+}
+let theVictory = victory(selection, map2);
+if (theVictory == true) {
+    hunter.removeEventListener("click",clique2)
+    alert("PEI")
+    // if (confirm("Parabéns, você achou todas as palavras! Deseja jogar novamente?")) {
+    //     alert("Vamos lá");
+    //     restartGame();
+    //     } else {
+    //     alert("Que pena!");
+    //     }
+}
+
+
 //FUNÇÃO RESET
 const reset = document.getElementById('reset');
 
 reset.addEventListener('click', restartGame);
 
 function restartGame() {
-
+    hunter.innerHTML = ""
     
-    handleBuildMap();
+    map = [
+        ["","","","","","","","","","",],
+        ["","","","","","","","","","",],
+        ["","","","","","","","","","",],
+        ["","","","","","","","","","",],
+        ["","","","","","","","","","",],
+        ["","","","","","","","","","",],
+        ["","","","","","","","","","",],
+        ["","","","","","","","","","",],
+        ["","","","","","","","","","",],
+        ["","","","","","","","","","",]
+        ]
+    selection = [
+            ["","","","","","","","","","",],
+            ["","","","","","","","","","",],
+            ["","","","","","","","","","",],
+            ["","","","","","","","","","",],
+            ["","","","","","","","","","",],
+            ["","","","","","","","","","",],
+            ["","","","","","","","","","",],
+            ["","","","","","","","","","",],
+            ["","","","","","","","","","",],
+            ["","","","","","","","","","",]
+            ]
+    map2 = [
+                ["","","","","","","","","","",],
+                ["","","","","","","","","","",],
+                ["","","","","","","","","","",],
+                ["","","","","","","","","","",],
+                ["","","","","","","","","","",],
+                ["","","","","","","","","","",],
+                ["","","","","","","","","","",],
+                ["","","","","","","","","","",],
+                ["","","","","","","","","","",],
+                ["","","","","","","","","","",]
+                ]
+    hunter.addEventListener("click",clique2)
+    start()
+    map1=start2()
+        handleBuildMap()
 
 }
-
-
-
-
