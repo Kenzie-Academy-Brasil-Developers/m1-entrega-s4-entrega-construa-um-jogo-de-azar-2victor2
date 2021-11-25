@@ -103,7 +103,9 @@ h2{
 	text-align: center;
 	line-height: 50px;	
 }
-
+.letters-clicked {
+	background-color: darkgreen;
+}
 #reset {
 	font-family: 'Amatic SC', cursive;
 	width: 100px;
