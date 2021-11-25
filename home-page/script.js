@@ -4,7 +4,7 @@
 //Lista de palavras possiveis de aparecer no caça palavras, todas relacionadas a sinuca ou bar
 const wordSearch = ["sinuca","taco","gelada","giz", "caçapa","cerveja","petisco","garçom",
 "coxinha","bolao","tacada","pares","impares","tabela","mesa","triangulo","estoura","zeca",
-"pagodinho"]
+"pagodinho","guri"]
 //Array bidimensional onde serao adicionadas as palavras e letras aleatorias
 let map = [
     ["","","","","","","","","","",],

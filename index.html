@@ -1,70 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Caça-palavras</title>
-		<!-- RESET -->
-		<link rel="stylesheet" href="/home-page/reset.css"/>	
-		<!-- ICON -->
-		<link rel="shortcut icon" type="imagex/png" href="hunting--words.png">
-		<!-- FONTES -->
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Roboto+Condensed:wght@400;700&display=swap" rel="stylesheet">
-		<!-- FOLHA DE ESTILO -->
-		<link rel="stylesheet" href="/home-page/hunting--words.css"/>
-	</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Caça-palavras</title>
+    <!-- RESET -->
+    <link rel="stylesheet" href="/home-page/reset.css" />
+    <!-- ICON -->
+    <link rel="shortcut icon" type="imagex/png" href="hunting--words.png" />
+    <!-- FONTES -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Roboto+Condensed:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- FOLHA DE ESTILO -->
+    <link rel="stylesheet" href="/home-page/hunting--words.css" />
+  </head>
 
-	<!-- BODY -->
-	<body>
-		<!-- HEADER -->
-		<header>
-			<div class="navbar">
-				<a id="hunting--words" href="./index.html">Caça-palavras</a>
-				<a id="magic--ball"href="./8-ball/8-ball.html">Magic 8-ball</a>
-			</div>
-		</header>
+  <!-- BODY -->
+  <body>
+    <!-- HEADER -->
+    <header>
+      <div class="navbar">
+        <a id="hunting--words" href="./index.html">Caça-palavras</a>
+        <a id="magic--ball" href="./8-ball/8-ball.html">Magic 8-ball</a>
+      </div>
+    </header>
 
-		<!-- SEÇÃO PRINCIPAL DA PÁGINAL -->
-		<main id="main">
-
-			<!-- SEÇÃO DO JOGO -->
-			<section id="hunting--words--board">
-				<h1>Adeptos do Zeca</h1>
-				<p class="presents">apresenta:</p>
-				<p class="title">Zecaterapia em Palavras</p>
-				<!-- REGRAS -->
-				<h2>Regras do jogo:</h2>
-				<ul>
-					<li></li>
-					<li></li>
-					<li></li>
-					<li></li>
-				</ul>
-				<!-- TABELA PARA O CAÇA-PALAVRAS -->
-				<div id="container-table">
-					<!-- <table id="hunting--words--table">
-						<tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
-						<tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
-						<tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
-						<tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
-						<tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
-						<tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
-						<tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
-						<tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
-						<tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
-						<tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
-					</table> -->
-				</div>
-				<!-- BOTÃO PARA O RESET -->
-				<button id="reset">Reiniciar</button>
-			</section>
-
-		</main>
-		<script src="/home-page/script.js"></script>
-	</body>
-
+    <!-- SEÇÃO PRINCIPAL DA PÁGINAL -->
+    <main id="main">
+      <!-- SEÇÃO DO JOGO -->
+      <section id="hunting--words--board">
+        <h1>Adeptos do Zeca</h1>
+        <p class="presents">apresenta:</p>
+        <p class="title">Zecaterapia em Palavras</p>
+        <!-- REGRAS -->
+        <div>
+          <ul class="rulesLIst">
+			  <li>
+				<span>Sobre o jogo:</span>
+			  </li>
+            <li>
+              <p>
+                Caça-palavras é um jogo em que seu objetivo é encontrar um
+                determinado numero de palavras, e quando essas forem encontradas
+                voce vence, e o jogo acaba
+              </p>
+            </li>
+            <li>
+              <p>
+                para essa versão precisaremos que voce encontre apenas 3 das
+                listadas
+              </p>
+            </li>
+            <li>
+              <p>
+                deixe marcado apenas as palavras que correspondem a alguma da
+                lista, qualquer letra a mais podera prejudicar seu resultado
+              </p>
+            </li>
+            <li>
+              <p>
+                se estiver achando muito dificil, clique em reiniciar e o
+                tabuleiro será redefinido
+              </p>
+            </li>
+          </ul>
+          <h2>Palavras a serem encontradas:</h2>
+          <p>
+            <button>sinuca -</button> <button>taco -</button
+            ><button>gelada -</button> <button>giz -</button
+            ><button>caçapa -</button><button>cerveja -</button>
+            <button>petisco -</button><button>garçom -</button
+            ><button>coxinha -</button> <button>bolao -</button
+            ><button>tacada -</button> <button>pares -</button
+            ><button>impares -</button><button>tabela -</button
+            ><button>mesa -</button> <button>triangulo -</button
+            ><button>estoura -</button><button>zeca -</button
+            ><button>pagodinho -</button>
+            <button>guri</button>
+          </p>
+        </div>
+      </section>
+      />
+      <!-- TABELA PARA O CAÇA-PALAVRAS -->
+      <section class="table">
+        <div id="container-table"></div>
+        <!-- BOTÃO PARA O RESET -->
+        <button id="reset">Reiniciar</button>
+      </section>
+    </main>
+    <script src="/home-page/script.js"></script>
+  </body>
 </html>
-		
