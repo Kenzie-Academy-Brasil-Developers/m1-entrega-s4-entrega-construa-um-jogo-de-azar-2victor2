@@ -24,7 +24,6 @@ for(let P = 0; P < wordSearch.length; P++){
         span.classList.toggle("line-through")
     })
 }
-
 //Array bidimensional onde serao adicionadas as palavras e letras aleatorias
 let map = [
     ["","","","","","","","","","",],
@@ -127,7 +126,7 @@ let disponibilidade = false
     word = words[count]
     orientaçao = randomNumber(0,3)
     disponibilidade = false
-    while (qualquerCoisa===false){
+    while (disponibilidade===false){
         switch (orientaçao) {
                 case 0: 
                 disponibilidade=avaliableSpot(inicialX,inicialY,word)
