@@ -104,9 +104,7 @@ mapFinal[i][j] = randomLetter()
 return mapFinal
 }
 
-console.table(map2)
 let map1=start2()
-console.table(map2)
 
 //Função para criar o array no HTML
 
@@ -147,7 +145,7 @@ let selection = [
     ["","","","","","","","","","",]
     ]
 
-hunter.addEventListener("click",clique2)
+hunter.addEventListener("click",clique2);
 function clique2(e){
     let div = e.target
     let letra = div.textContent
@@ -158,15 +156,46 @@ function clique2(e){
     selection[linha][coluna] = letra
     }
         else{selection[linha][coluna] = ""}
+
+        let theVictory = victory(selection, map2);
+        if (theVictory == true) {
+            hunter.removeEventListener("click",clique2)
+            if (confirm("Parabéns, você achou todas as palavras! Deseja jogar novamente?")) {
+                alert("Vamos lá");
+                restartGame();
+                } else {
+                alert("Que pena!");
+                }
+        }
         
 
 }
 
-
-
-
 //parametro de vitoria
-
+const victory = (a, b) => {
+    console.log(a) 
+    console.log(b)
+    if (a.length == b.length){
+        for(let line = 0; line < a.length; line++){
+            for (let column = 0; column < a.length; column++){
+                if (a[line][column]!==b[line][column]){
+                    return false; 
+                } 
+            }
+        } return true;
+    }
+}
+let theVictory = victory(selection, map2);
+if (theVictory == true) {
+    hunter.removeEventListener("click",clique2)
+    alert("PEI")
+    // if (confirm("Parabéns, você achou todas as palavras! Deseja jogar novamente?")) {
+    //     alert("Vamos lá");
+    //     restartGame();
+    //     } else {
+    //     alert("Que pena!");
+    //     }
+}
 
 
 //FUNÇÃO RESET
@@ -213,7 +242,7 @@ function restartGame() {
                 ["","","","","","","","","","",],
                 ["","","","","","","","","","",]
                 ]
-    
+    hunter.addEventListener("click",clique2)
     start()
     map1=start2()
         handleBuildMap()
