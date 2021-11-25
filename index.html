@@ -22,49 +22,72 @@
 		<!-- HEADER -->
 		<header>
 			<div class="navbar">
-				<a id="hunting--words" href="./index.html">Caça-palavras</a>
-				<a id="magic--ball"href="./8-ball/8-ball.html">Magic 8-ball</a>
+				<a id="hunting--words" href="http://127.0.0.1:5500/index.html">Caça-palavras</a>
+				<a id="magic--ball"href="http://127.0.0.1:5500/8-ball/8-ball.html">Magic 8-ball</a>
 			</div>
 		</header>
 
-		<!-- SEÇÃO PRINCIPAL DA PÁGINAL -->
-		<main id="main">
+    <!-- SEÇÃO PRINCIPAL DA PÁGINAL -->
 
-			<!-- SEÇÃO DO JOGO -->
-			<section id="hunting--words--board">
-				<h1>Adeptos do Zeca</h1>
-				<p class="presents">apresenta:</p>
-				<p class="title">Zecaterapia em Palavras</p>
-				<!-- REGRAS -->
-				<h2>Regras do jogo:</h2>
-				<ul>
-					<li></li>
-					<li></li>
-					<li></li>
-					<li></li>
-				</ul>
-				<!-- TABELA PARA O CAÇA-PALAVRAS -->
-				<div id="container-table">
-					<!-- <table id="hunting--words--table">
-						<tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
-						<tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
-						<tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
-						<tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
-						<tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
-						<tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
-						<tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
-						<tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
-						<tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
-						<tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
-					</table> -->
-				</div>
-				<!-- BOTÃO PARA O RESET -->
-				<button id="reset">Reiniciar</button>
-			</section>
+    <main id="main">
+      <!-- SEÇÃO DO JOGO -->
+      <section id="hunting--words--board">
+        <h1>Adeptos do Zeca</h1>
+        <p class="presents">apresenta:</p>
+        <p class="title">Zecaterapia em Palavras</p>
+        <!-- REGRAS -->
+        <div id="containerRules">
+          <ul class="rulesLIst">
+            <li>
+            <span>Sobre o jogo:</span>
+            </li>
+            <li>
+              <p>
+                Caça-palavras é um jogo em que seu objetivo é encontrar um
+                determinado numero de palavras, e quando essas forem encontradas
+                voce vence, e o jogo acaba
+              </p>
+            </li>
+            <li>
+              <p>
+                para essa versão precisaremos que voce encontre apenas 3 das
+                listadas
+              </p>
+            </li>
+            <li>
+              <p>
+                deixe marcado apenas as palavras que correspondem a alguma da
+                lista, qualquer letra a mais podera prejudicar seu resultado
+              </p>
+            </li>
+            <li>
+              <p>
+                se estiver achando muito dificil, clique em reiniciar e o
+                tabuleiro será redefinido
+              </p>
+            </li>
+          </ul>
+          <h2>Palavras a serem encontradas:</h2>
 
-		</main>
-		<script src="/home-page/script.js"></script>
-	</body>
+          <p id="wordsToFind">
+            
 
+          </p>
+        </div>
+      </section>
+      
+      <!-- TABELA PARA O CAÇA-PALAVRAS -->
+      <section class="table">
+        <div id="container-table"></div>
+        <!-- BOTÃO PARA O RESET -->
+        <button id="reset">Reiniciar</button>
+      </section>
+      <!-- AUDIO DE FUNDO -->
+      <audio src="./home-page/yt1s.com - Som bar  Efeitos sonoros de bar e pub.mp3" autoplay loop id="myAudio"></audio>
+    </main>
+    <script src="/home-page/script.js"></script>
+  </body>
+
+  
 </html>
 		

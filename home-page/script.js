@@ -3,8 +3,27 @@
 
 //Lista de palavras possiveis de aparecer no caça palavras, todas relacionadas a sinuca ou bar
 const wordSearch = ["sinuca","taco","gelada","giz", "caçapa","cerveja","petisco","garçom",
-"coxinha","bolao","tacada","pares","impares","tabela","mesa","pinga","estoura","zeca",
-"pagode"]
+"coxinha","bolao","tacada","pares","impares","tabela","mesa","triangulo","estoura","zeca",
+"pagodinho","guri"]
+
+//função para mostrar as palavras na tela para o jogador
+
+const containerP = document.getElementById("wordsToFind")
+for(let P = 0; P < wordSearch.length; P++){
+    let span = document.createElement("span")
+    let hyphen = document.createElement("span")
+
+    span.setAttribute("id","clickedWord")
+    span.innerText = wordSearch[P]
+    hyphen.innerText = " - "
+
+    containerP.appendChild(span)
+    containerP.appendChild(hyphen)
+
+    span.addEventListener("click", ()=>{
+        span.classList.toggle("line-through")
+    })
+}
 //Array bidimensional onde serao adicionadas as palavras e letras aleatorias
 let map = [
     ["","","","","","","","","","",],
@@ -174,9 +193,7 @@ mapFinal[i][j] = randomLetter()
 return mapFinal
 }
 
-console.table(map2)
 let map1=start2()
-console.table(map2)
 
 //Função para criar o array no HTML
 
@@ -217,7 +234,7 @@ let selection = [
     ["","","","","","","","","","",]
     ]
 
-hunter.addEventListener("click",clique2)
+hunter.addEventListener("click",clique2);
 function clique2(e){
     let div = e.target
     let letra = div.textContent
@@ -228,15 +245,46 @@ function clique2(e){
     selection[linha][coluna] = letra
     }
         else{selection[linha][coluna] = ""}
+
+        let theVictory = victory(selection, map2);
+        if (theVictory == true) {
+            hunter.removeEventListener("click",clique2)
+            if (confirm("Parabéns, você achou todas as palavras! Deseja jogar novamente?")) {
+                alert("Vamos lá");
+                restartGame();
+                } else {
+                alert("Que pena!");
+                }
+        }
         
 
 }
 
-
-
-
 //parametro de vitoria
-
+const victory = (a, b) => {
+    console.log(a) 
+    console.log(b)
+    if (a.length == b.length){
+        for(let line = 0; line < a.length; line++){
+            for (let column = 0; column < a.length; column++){
+                if (a[line][column]!==b[line][column]){
+                    return false; 
+                } 
+            }
+        } return true;
+    }
+}
+let theVictory = victory(selection, map2);
+if (theVictory == true) {
+    hunter.removeEventListener("click",clique2)
+    alert("PEI")
+    // if (confirm("Parabéns, você achou todas as palavras! Deseja jogar novamente?")) {
+    //     alert("Vamos lá");
+    //     restartGame();
+    //     } else {
+    //     alert("Que pena!");
+    //     }
+}
 
 
 //FUNÇÃO RESET
@@ -283,9 +331,13 @@ function restartGame() {
                 ["","","","","","","","","","",],
                 ["","","","","","","","","","",]
                 ]
-    
+    hunter.addEventListener("click",clique2)
     start()
     map1=start2()
         handleBuildMap()
 
 }
+// VOLUME DO AUDIO DE FUNDO
+
+const audio = document.getElementById("myAudio");
+  audio.volume = 0.1;
