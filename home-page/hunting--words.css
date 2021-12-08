@@ -1,6 +1,6 @@
 /*MESMA FONTE EM TODO BODY*/
 body{
-	background-image: url(./home-page/background-amadeirado.jpg);
+	background-image: url(./background-amadeirado.jpg);
 	font-family: 'Amatic SC', cursive;
 	box-sizing: border-box;
 	display: flex;
