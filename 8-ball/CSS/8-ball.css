@@ -1,5 +1,5 @@
 body {
-    background-image: url(/Assets/background2.jpg);
+    background-image: url(../Assets/background2.jpg);
     background-size: 100vw 100vh;
     font-family: 'Amatic SC', cursive;
 }
@@ -94,7 +94,7 @@ body {
 
 @media (min-width:480px){
     body {
-        background-image:url(/8-ball/Assets/background2.jpg);
+        background-image:url(../Assets/background2.jpg);
         background-size: 100vw 100vh;
     }
     .magicBallHeader {
