@@ -1,0 +1,177 @@
+/*MESMA FONTE EM TODO BODY*/
+body{
+	background-image: url(./background-amadeirado.jpg);
+	font-family: 'Amatic SC', cursive;
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 10px;
+}
+figcaption{
+	display: none;
+}
+#hunting--words, #magic--ball {
+	text-decoration: none;
+	color:#fff;
+	font-size: 28px;
+	margin: 15px 0;
+}
+#hunting--words:hover, #magic--ball:hover{
+	text-decoration: underline;
+}
+/*MENU DE NAVEGAÇÃO*/
+header{
+	width: 100%;
+}
+.navbar {
+	display: flex;
+	justify-content: space-evenly;
+	width: 100vw;
+	align-items: center;
+}
+
+/*NOME DO GRUPO*/
+h1{
+	color: #fff;
+	font-size: 38px;
+	text-align: center;
+	margin: 15px 0;
+}
+
+/*PRESENTS*/
+.presents{
+	color: #fff;
+	text-align: center;
+	font-size: 28px;
+	font-style: italic;
+}
+/*NOME DO JOGO*/
+.title{
+	color: #fff;
+	font-size: 38px;
+	text-align: center;
+	margin: 15px 0 30px 0;
+}
+
+/* REGRAS */
+h2{
+	color: #fff;
+	font-size: 28px;
+}
+.rulesList {
+	padding: 5px;
+}
+div p {
+	margin-top: 20px;
+}
+
+div p span {
+	color: #fff;
+	font-size: 24px;
+	cursor: pointer;
+}
+div p span:last-child{
+	display: none;
+}
+div h2{
+	margin-top: 20px;
+}
+div p .line-through{
+	text-decoration: line-through;
+}
+#hunting--words--board ul li p {
+	color: #fff;
+	font-size: 26px;
+	margin-bottom: 10px;
+}
+#hunting--words--board ul li span {
+	color: #fff;
+	font-size: 30px;
+	margin-bottom: 10px;
+}
+#hunting--words--board div {
+	text-align: center;
+}
+
+
+
+/* CONTAINER / TABLE*/
+.table {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 100vw;
+
+}
+#container-table{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	width: 100vw;
+	margin-top: 30px;
+}
+
+
+/*LETRA DO CAÇA PALAVRAS - TAMANHO E BORDA*/
+.letters {
+	width: 30px;
+	height: 30px;
+	border: 1px #fff solid;
+	color: white;
+	font-size: 26px;
+	text-align: center;
+	line-height: 30px;	
+	cursor: pointer;
+}
+.letters-clicked {
+	background-color: darkgreen;
+}
+#reset {
+	font-family: 'Amatic SC', cursive;
+	width: 100px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    background-color: transparent;
+    color: white;
+    font-size: 26px;
+    display: flex;
+    border: 0px;
+    margin: 20px auto 0;
+    justify-content: center;
+}
+#reset:hover{
+	cursor: pointer;
+	text-decoration: underline;
+}
+/* COMPATIBILIDADE COM TELAS ACIMA DE 480PX DE LARGURA */
+
+@media (min-width:480px) {
+	.rulesList {
+		padding-left: 50px;
+	}
+	#hunting--words--board div {
+		text-align: center;
+	}
+	
+
+	#container-table{
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		width: 520px;
+		margin-top: 30px;
+	}
+	
+	
+	/*LETRA DO CAÇA PALAVRAS - TAMANHO E BORDA*/
+	.letters {
+		width: 50px;
+		height: 50px;
+		border: 1px #fff solid;
+		color: white;
+		font-size: 26px;
+		text-align: center;
+		line-height: 50px;	
+	}
+}
